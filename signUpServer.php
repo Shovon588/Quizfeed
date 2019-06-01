@@ -76,8 +76,6 @@ if ($result) {
 } 
 else {
 
-    echo $conn->error;
-    die();
     $message = "An error has been occured. Please try again.";
 
     echo "<script type='text/javascript'>alert('$message');
