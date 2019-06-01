@@ -165,7 +165,7 @@
       </div>
       <div class="col-sm">
         <center>
-          <img src="fixedimg.png" style="width: 350px; height:350px">
+          <img src="fixedimg.png" style="width: 350px; height:350px;%">
         </center>
       </div>
     </div>
