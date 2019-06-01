@@ -2,8 +2,7 @@
 session_start();
 require("connectToDB.php");
 
-if(isset($_POST['email']))
-{
+if (isset($_POST['email'])) {
 
     $email = $_POST['email'];
 
@@ -59,14 +58,22 @@ if(isset($_POST['email']))
             echo 'Message could not be sent.';
             echo 'Mailer Error: ' . $mail->ErrorInfo;
         } else {
-            echo "<br><h1>Your Email has been sent to your mail.\nYou are redirecting to the homepage.</h1>";
-            header("refresh:2; url=index.php");
-    }
-} 
-    else {
+            $message = "An email has been sent to your account.\\nPlease check your email and change password.";
 
-        echo "<br><h1>Your Email doesn't exist.\nPlease type in a valid email.</h1>";
-        header("refresh:2; url=forgotPassword.php");
+            echo "<script type='text/javascript'>alert('$message');
+            window.location.href='index.php';
+    
+            </script>";
+            echo 'window.location.href = "index.php";';
+        }
+    } else {
+        $message = "Your email does not exist.\\nPlease type in a valid email.";
+
+        echo "<script type='text/javascript'>alert('$message');
+            window.location.href='forgotPassword.php';
+    
+            </script>";
+        echo 'window.location.href = "forgotPassword.php";';
     }
 }
 
@@ -94,7 +101,7 @@ if(isset($_POST['email']))
                                 <p>Fear not. You can reset your password here.</p>
                                 <div class="panel-body">
 
-                                    <form id="register-form" role="form" autocomplete="off" class="form" action="forgotPasswordServer.php" method="post">
+                                    <form id="register-form" role="form" autocomplete="off" class="form" action="" method="post">
 
                                         <div class="form-group">
                                             <div class="input-group">
