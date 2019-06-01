@@ -25,7 +25,7 @@ $token = 'qwertzuiopasdfghjklyxcvbnmQWERTZUIOPASDFGHJKLYXCVBNM0123456789!$/()*';
 $query = "INSERT INTO `bose_user_profile` (`email`,`password`,`token`) VALUES('$email','$password','$token')";
 
 $result = mysqli_query($conn, $query);
-if($result) die("ei porjonto thik ache");
+
 
 require 'PHPMailer/PHPMailerAutoload.php';
 
@@ -47,7 +47,7 @@ $mail->addAddress($email);   // Add a recipient
 
 $mail->isHTML(true);  // Set email format to HTML
 
-$bodyContent .= " Hey there! You just signed up for Quizfeed. Please click on the link below to verify your account:<br><br>
+$bodyContent = " Hey there! You just signed up for Quizfeed. Please click on the link below to verify your account:<br><br>
                     
 <a href='http://quizfeed.selisestaging.com/confirm.php?email=$email&token=$token'>Click to verify.</a>
 
