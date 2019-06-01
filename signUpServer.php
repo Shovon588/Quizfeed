@@ -56,6 +56,7 @@ Thank You
 <br>
 Regards by Quizfeed team.
 ";
+die("ekhaneo thik achi");
 
 $mail->Subject = 'Email from Quizfeed';
 $mail->Body    = $bodyContent;
