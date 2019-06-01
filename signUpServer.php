@@ -25,6 +25,7 @@ $token = 'qwertzuiopasdfghjklyxcvbnmQWERTZUIOPASDFGHJKLYXCVBNM0123456789!$/()*';
 $query = "INSERT INTO `bose_user_profile` (`email`,`password`,`token`) VALUES('$email','$password','$token')";
 
 $result = mysqli_query($conn, $query);
+if($result) die("ei porjonto thik ache");
 
 require 'PHPMailer/PHPMailerAutoload.php';
 

@@ -1,8 +1,6 @@
 {
   "done": [],
-  "in-progress": [],
-  "testing": [],
-  "todo": [
+  "in-progress": [
     {
       "assignedTo": {
         "name": "Shovon"
@@ -18,5 +16,7 @@
       "title": "Have to add sign up sever",
       "type": "emergency"
     }
-  ]
+  ],
+  "testing": [],
+  "todo": []
 }
