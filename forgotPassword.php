@@ -45,7 +45,7 @@ if (isset($_POST['email'])) {
 
         $bodyContent = '<h1>Love from Quizfeed.</h1>';
         $bodyContent .= "<br>Reset your password by clicking the link below:<br>
-        <a href='http://localhost/every-end/changePass.php?vkey=$vkey'>Change Password!</a><br><br>
+        <a href='http://quizfeed.selisestaging.com/changePass.php?vkey=$vkey'>Change Password!</a><br><br>
         Thank You
         <br>
         Regards by Quizfeed team.";
