@@ -23,7 +23,7 @@
       <div class="dropdown-menu" aria-labelledby="dropdownMenuOffset">
         <a class="dropdown-item" href="index.php">Home</a>
         <a class="dropdown-item" href="logOutCalendar.php">Calendar</a>
-        <a class="dropdown-item" href="aboutUs.php">About Us</a>
+        <a class="dropdown-item" href="aboutUsLogOut.php">About Us</a>
       </div>
       <nobr style="font-family:Lobster; font-size:140%">&nbsp; Quiz Feed</nobr>
     </div>
