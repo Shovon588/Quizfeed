@@ -52,7 +52,7 @@ require("connectToDB.php");
                     $hour = floor($hour - ($day * 24));
 
                     echo "<tr>
-                                <td>" . "<a href='http://localhost/every-end/quizArena?quizId=$quizID'>$title</a>" . "</td>
+                                <td>" . "<a href='http://quizfeed.selisestaging.com/quizArena?quizId=$quizID'>$title</a>" . "</td>
                                 <td>" . date("M d,Y h:i A", strtotime($row['startTime'])) . "<br>" . $day . " days " . $hour . " hours" . " remaining" . "</td>
                                 <td>" . date("M d,Y h:i A", strtotime($row['endTime'])) . "</td>
                             </tr>";
