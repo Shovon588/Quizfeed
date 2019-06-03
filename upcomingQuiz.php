@@ -19,11 +19,28 @@ require("connectToDB.php");
 
 <body>
 
-            <?php
-            $sql = "SELECT * FROM  bose_quiz_info WHERE startTime>CURRENT_TIMESTAMP ";
-            $result = $conn->query($sql);
+    <?php
+    $sql = "SELECT * FROM  bose_quiz_info WHERE startTime>CURRENT_TIMESTAMP ";
+    $result = $conn->query($sql);
 
-            if ($result->num_rows > 0) {
+    if ($result->num_rows > 0) {
+
+
+        ?>
+        <h3 align="center">Upcoming Quiz</h3>
+
+        <table class="mdl-data-table" id='shovon' style="border:3px solid black;white-space:nowrap;font-size:15px;">
+            <thead>
+                <tr>
+                    <th>Quiz Title</th>
+                    <th>Start Time</th>
+                    <th>End Time</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <?php
+
                 while ($row = $result->fetch_assoc()) {
                     $title = $row['quizTitle'];
                     $quizID = $row['quizID'];
@@ -34,55 +51,42 @@ require("connectToDB.php");
                     $day = floor($hour / 24);
                     $hour = floor($hour - ($day * 24));
 
-                    ?>
-                    <table class="mdl-data-table" id='shovon' style="border:3px solid black;white-space:nowrap;font-size:15px;">
-                        <thead>
-                            <tr>
-                                <th>Quiz Title</th>
-                                <th>Start Time</th>
-                                <th>End Time</th>
-                            </tr>
-                        </thead>
-
-                        <tbody>
-                            <?php
-
-                            echo "<tr>
+                    echo "<tr>
                                 <td>" . "<a href='http://localhost/every-end/quizArena?quizId=$quizID'>$title</a>" . "</td>
                                 <td>" . date("M d,Y h:i A", strtotime($row['startTime'])) . "<br>" . $day . " days " . $hour . " hours" . " remaining" . "</td>
                                 <td>" . date("M d,Y h:i A", strtotime($row['endTime'])) . "</td>
                             </tr>";
-                            }
-                            } else echo "<h2 align='center'>No upcoming quiz available</h2>";
+                }
+            } else echo "<h2 align='center'>No upcoming quiz available</h2>";
 
-                            ?>
+            ?>
 
-                        </tbody>
+        </tbody>
 
-                    </table>
+    </table>
 
-        </body>
-        <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-        <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-        <script src="https://cdn.datatables.net/1.10.19/js/dataTables.material.min.js"></script>
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.19/js/dataTables.material.min.js"></script>
 
-        <script>
-            $(document).ready(function() {
-                $('#shovon').DataTable({
-                    pageLength: 5,
-                    lengthMenu: [
-                        [5, 10, 20, -1],
-                        [5, 10, 20, "Show All"]
-                    ]
-                });
-            });
-        </script>
-        <style>
-            .pagination {
-                padding-left: 20px
-            }
-        </style>
+<script>
+    $(document).ready(function() {
+        $('#shovon').DataTable({
+            pageLength: 5,
+            lengthMenu: [
+                [5, 10, 20, -1],
+                [5, 10, 20, "Show All"]
+            ]
+        });
+    });
+</script>
+<style>
+    .pagination {
+        padding-left: 20px
+    }
+</style>
 
 
 
-        </html>
+</html>
