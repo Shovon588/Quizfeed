@@ -27,8 +27,6 @@ $query = "INSERT INTO `bose_user_profile` (`email`,`password`,`token`) VALUES('$
 $result = mysqli_query($conn, $query);
 
 
-
-//PHP mailer strikes here
 require 'PHPMailer/PHPMailerAutoload.php';
 
 $mail = new PHPMailer;
@@ -45,7 +43,7 @@ $mail->setFrom('jahanhaque7@gmail.com', 'Quizfeed');
 $mail->addReplyTo('jahanhaque7@gmail.com', 'Quizfeed');
 $mail->addAddress($email);   // Add a recipient
 //$mail->addCC('cc@example.com');
-$mail->addBCC('mainulislam588@gmail.com');
+//$mail->addBCC('bcc@example.com');
 
 $mail->isHTML(true);  // Set email format to HTML
 
