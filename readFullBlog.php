@@ -1,10 +1,11 @@
 <?php
-session_start();
+//session_start();
 //require("sessionCheck.php");
 require("connectToDB.php");
 
 if (isset($_GET['blogID'])) {
     $blogID = $_GET['blogID'];
+    $id = $_SESSION['id'];
 }
 
 ?>
