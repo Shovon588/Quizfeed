@@ -55,7 +55,7 @@ if (isset($_GET['blogID'])) {
             </div>
         <?php } ?>
 
-        <div class="card" style="width:100%;background-color:burlywood">
+        <div class="card" style="width:100%;background-color:burlywood;padding-bottom:2%">
             <h3 align="center">Comments</h3>
             <?php echo "" . "<a style='font-size:20px' href='http://quizfeed.selisestaging.com/writeComment.php?blogID=$blogID'>Write new comment</a>"; ?>
 

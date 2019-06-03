@@ -37,7 +37,7 @@ $id = $_SESSION['id'];
     <?php require("header.php"); ?>
 
 
-    <div class="row" style="margin-top:5%">
+    <div class="row" style="margin-top:5%;">
         <div class="col-sm-10">
             <?php
             $query = "select * from bose_blog";
@@ -49,7 +49,7 @@ $id = $_SESSION['id'];
                 $blogID = $row['blogNo'];
 
                 ?>
-                <div class="card" style="height:max-content;background-color:white;margin-bottom:5%;border:2px solid black;">
+                <div class="card" style="height:max-content;background-color:white;margin-bottom:5%;border:2px solid black;padding-left:2%">
 
                     <h5><?php echo "" . $title; ?></h5>
                     <h6><b><?php echo "Published on: " . date("M d,Y h:i A", $time); ?></b> </h6>
@@ -73,7 +73,7 @@ $id = $_SESSION['id'];
                 <div class="modal-dialog modal-lg">
 
                     <div class="modal-content" style="width:200%;margin-left:25%">
-                        <div class="modal-body">
+                        <div class="modal-body" style="padding:0%" >
                             <?php require("readFullBlog.php"); ?>
                         </div>
 
