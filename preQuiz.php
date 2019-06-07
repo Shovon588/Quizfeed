@@ -14,7 +14,6 @@ require("connectToDB.php");
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.1.0/material.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/dataTables.material.min.css">
-    <title>Upcoming Quiz</title>
 </head>
 
 <body>
@@ -27,7 +26,7 @@ require("connectToDB.php");
         ?>
         <h3 align="center">Previous Quiz</h3>
 
-        <table class="mdl-data-table" id='prequiz' style="border:3px solid black;white-space:nowrap;font-size:15px;">
+        <table class="mdl-data-table" id='prequiz' style="border:2px solid black;white-space:unset;font-size:15px;">
             <thead>
                 <tr>
                     <th>Quiz Title</th>
