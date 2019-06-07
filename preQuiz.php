@@ -1,7 +1,5 @@
 <?php
-//session_start();
 require("connectToDB.php");
-//require("sessionCheck.php");
 ?>
 
 
@@ -26,7 +24,7 @@ require("connectToDB.php");
         ?>
         <h3 align="center">Previous Quiz</h3>
 
-        <table class="mdl-data-table" id='prequiz' style="border:2px solid black;white-space:unset;font-size:15px;">
+        <table class="mdl-data-table" id='prequiz' style="border:3px solid black;white-space:unset;font-size:15px;">
             <thead>
                 <tr>
                     <th>Quiz Title</th>
