@@ -79,6 +79,7 @@ else{
 }
 
 
+
 //update profile picture
 if (isset($_POST['upload'])) {
     $file = $id . "-" . $_FILES['file']['name'];
@@ -103,7 +104,7 @@ if (isset($_POST['upload'])) {
     </script>";
 }
 else{
-    $conn->error;
+    die("".mysqli_error($conn));
 }
 }
 

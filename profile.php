@@ -70,7 +70,6 @@ while ($row = $result->fetch_assoc()) {
                 </label>
             </div>
 
-
             <button type="submit" class="btn btn-outline-secondary" name="upload">Upload</button>
         </form>
 
