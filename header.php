@@ -15,6 +15,7 @@
     .dropdown-item {
         padding: 6%;
         font-family: "Exo 2";
+        font-size:20px;
     }
 
     .d-flex {
@@ -30,7 +31,7 @@
         <button type="button" class="btn btn-secondary dropdown-toggle" id="dropdownMenuOffset" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="130,0" style="background-color:black;">
             <i class="fa fa-bars"></i>
         </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuOffset">
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuOffset" style="width:max-content;font-size:30px">
             <a class="dropdown-item" href="homepage.php">Home</a>
             <!--<a class="dropdown-item" href="quizInfo.php">Quiz</a>-->
             <a class="dropdown-item" href="questionArchive.php">Questions</a>
