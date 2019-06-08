@@ -31,8 +31,7 @@ require("connectToDB.php");
         /* Create two unequal columns that floats next to each other */
         /* Left column */
         .leftcolumn {
-            width: 70%;
-            align: middle;
+            width:75%;
         }
 
 
@@ -42,6 +41,8 @@ require("connectToDB.php");
             padding: 20px;
             margin-top: 20px;
             border: 3px solid black;
+            align:middle;
+            
         }
 
         /* Clear floats after the columns */
@@ -124,8 +125,10 @@ require("connectToDB.php");
     </div>
 
 
+
     <div class="row">
-        <center>
+
+    <center>
             <div class="leftcolumn">
                 <?php
                 $query = "select * from bose_blog";
@@ -137,18 +140,16 @@ require("connectToDB.php");
                     $blogID = $row['blogNo'];
 
                     ?>
-
-
-                    <div class="card" style="border:3px solid black">
-                        <h2><?php echo "" . $title; ?></h2>
-                        <h5><?php echo "Published on: " . date("M d,Y h:i A", $time); ?></h5><br>
-                        <p style="font-size:20px"><?php echo "" . substr($blog, 0, 260) . "....." . "<a href='http://localhost/quizfeed/readFullBlog.php?blogID=$blogID'>Read full blog</a>"; ?></p>
+                    <div class="card" style="border:3px solid;" >
+                                <h2><?php echo "" . $title; ?></h2>
+                                <h5><?php echo "Published on: " . date("M d,Y h:i A", $time); ?></h5><br>
+                                <p style=" font-size:17px"><?php echo "" . substr($blog, 0, 260) . "....." . "<a href='http://localhost/quizfeed/readFullBlog.php?blogID=$blogID'>Read full blog</a>"; ?></p>
                     </div>
                 <?php } ?>
             </div>
-        </center>
-
+    </center>
     </div>
+
 
 </body>
 
