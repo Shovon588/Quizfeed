@@ -42,6 +42,7 @@ require("connectToDB.php");
             margin-top: 20px;
             border: 3px solid black;
             align:middle;
+            border-radius: 15%;
             
         }
 
