@@ -84,18 +84,14 @@ else{
 if (isset($_POST['upload'])) {
     $file = $id . "-" . $_FILES['file']['name'];
     $location = $_FILES['file']['tmp_name'];
-    $size = $_FILES['file']['size'];
-    $type = $_FILES['file']['type'];
     $folder = "upload/";
 
 
-    $new_size = $size / 1024;
     $new_file = strtolower($file);
     $final_file = str_replace(' ', '-', $new_file);
 
 
     if (move_uploaded_file($location, $folder . $final_file)) {
-        die("omg i am here");
         $sql = "UPDATE `bose_user_profile` SET `profilePicture`='$final_file' where id=$id";
         mysqli_query($conn, $sql);
         $message = "Profile picture updated.";
@@ -104,10 +100,15 @@ if (isset($_POST['upload'])) {
     window.location.href='profile.php';
     
     </script>";
-}
-else{
-    die("he didnt make it");
-}
+    }
+    else{
+        $message = "Profile picture upload failed.";
+
+        echo "<script type='text/javascript'>alert('$message');
+    window.location.href='profile.php';
+    
+    </script>";
+    }
 }
 
 
