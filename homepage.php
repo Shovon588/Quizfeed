@@ -1,6 +1,6 @@
 <?php
 session_start();
-//require("sessionCheck.php");
+require("sessionCheck.php");
 require("connectToDB.php");
 
 ?>
@@ -25,13 +25,6 @@ require("connectToDB.php");
             font-family: Arial;
             padding: 20px;
             background: #f1f1f1;
-        }
-
-
-        /* Create two unequal columns that floats next to each other */
-        /* Left column */
-        .leftcolumn {
-            width: 75%;
         }
 
 
@@ -146,9 +139,9 @@ require("connectToDB.php");
 
                     ?>
                     <div class="card" style="border:3px solid;">
-                        <h2><?php echo "" . $title; ?></h2>
+                        <h3><?php echo "" . $title; ?></h3>
                         <h5><?php echo "Published on: " . date("M d,Y h:i A", $time); ?></h5><br>
-                        <p style=" font-size:17px"><?php echo "" . substr($blog, 0, 260) . "....." . "<a href='http://localhost/quizfeed/readFullBlog.php?blogID=$blogID'>Read full blog</a>"; ?></p>
+                        <p style=" font-size:17px"><?php echo "" . substr($blog, 0, 260) . "....." . "<a href='http://quizfeed.selisestaging.com/readFullBlog.php?blogID=$blogID'>Read full blog</a>"; ?></p>
                     </div>
                 <?php } ?>
             </div>
