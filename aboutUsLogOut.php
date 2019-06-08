@@ -40,7 +40,7 @@
             <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><i class="fa fa-bars"></i></button>
             <ul class="dropdown-menu">
                 <li><a href="index.php">Home</a></li>
-                <li><a href="LogOutcalander.php">Calander</a></li>
+                <li><a href="LogOutCalander.php">Calander</a></li>
                 <li><a href="aboutUsLogOut.php">About Us</a></li>
             </ul>
             <nobr style="font-family:Lobster; font-size:140%">&nbsp; Quiz Feed</nobr>
