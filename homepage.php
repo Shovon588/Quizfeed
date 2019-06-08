@@ -84,6 +84,7 @@ require("connectToDB.php");
         <a href="#previous" class="btn btn-lg btn-primary" data-toggle="modal">Previous Quiz</a>
     </center>
 
+    <h1>Changes</h1>
 
     <!-- Upcoming Quiz -->
     <div id="upcoming" class="modal">
