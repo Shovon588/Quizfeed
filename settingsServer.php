@@ -93,6 +93,8 @@ if (isset($_POST['upload'])) {
     $new_file = strtolower($file);
     $final_file = str_replace(' ', '-', $new_file);
 
+    die("i was here");
+
     if (move_uploaded_file($location, $folder . $final_file)) {
         $sql = "UPDATE `bose_user_profile` SET `profilePicture`='$final_file' where id=$id";
         mysqli_query($conn, $sql);
