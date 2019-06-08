@@ -31,7 +31,7 @@ require("connectToDB.php");
         /* Create two unequal columns that floats next to each other */
         /* Left column */
         .leftcolumn {
-            width:75%;
+            width: 75%;
         }
 
 
@@ -41,9 +41,9 @@ require("connectToDB.php");
             padding: 20px;
             margin-top: 20px;
             border: 3px solid black;
-            align:middle;
+            align: middle;
             border-radius: 15%;
-            
+
         }
 
         /* Clear floats after the columns */
@@ -84,7 +84,6 @@ require("connectToDB.php");
         <a href="#previous" class="btn btn-lg btn-primary" data-toggle="modal">Previous Quiz</a>
     </center>
 
-    <h1>Changes</h1>
 
     <!-- Upcoming Quiz -->
     <div id="upcoming" class="modal">
@@ -128,10 +127,14 @@ require("connectToDB.php");
 
 
 
-    <div class="row">
+    <div class="container-fluid">
+        <div class="row">
 
-    <center>
-            <div class="leftcolumn">
+
+            <div class="col-sm-2">
+            </div>
+
+            <div class="col-sm-8">
                 <?php
                 $query = "select * from bose_blog";
                 $result = mysqli_query($conn, $query);
@@ -142,14 +145,17 @@ require("connectToDB.php");
                     $blogID = $row['blogNo'];
 
                     ?>
-                    <div class="card" style="border:3px solid;" >
-                                <h2><?php echo "" . $title; ?></h2>
-                                <h5><?php echo "Published on: " . date("M d,Y h:i A", $time); ?></h5><br>
-                                <p style=" font-size:17px"><?php echo "" . substr($blog, 0, 260) . "....." . "<a href='http://localhost/quizfeed/readFullBlog.php?blogID=$blogID'>Read full blog</a>"; ?></p>
+                    <div class="card" style="border:3px solid;">
+                        <h2><?php echo "" . $title; ?></h2>
+                        <h5><?php echo "Published on: " . date("M d,Y h:i A", $time); ?></h5><br>
+                        <p style=" font-size:17px"><?php echo "" . substr($blog, 0, 260) . "....." . "<a href='http://localhost/quizfeed/readFullBlog.php?blogID=$blogID'>Read full blog</a>"; ?></p>
                     </div>
                 <?php } ?>
             </div>
-    </center>
+
+            <div class="col-sm-2">
+            </div>
+        </div>
     </div>
 
 
