@@ -17,7 +17,9 @@ if (isset($_GET['blogID'])) {
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Read blog</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
@@ -77,20 +79,20 @@ if (isset($_GET['blogID'])) {
                 <div id="comment" class="modal">
                     <div class="modal-dialog modal-lg">
                         <div class="modal-content">
+                            <div class="modal-footer" style="border-top:0px">
+                                <button class="btn" data-dismiss="modal"><i class="fa fa-close" style="font-size:20px;"></i></button>
+                            </div>
                             <div class="modal-body">
                                 <p>
-                                <h1>Ekhane ekta cool editor bosbe</h1>
+                                    <?php require("writeComment.php"); ?>
                                 </p>
-                            </div>
-                            <div class="modal-footer" style="border-top:0px">
-                                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
                             </div>
                         </div>
                     </div>
                 </div>
 
 
-                
+
                 <br><br>
                 <?php
                 //fetch comments
@@ -103,7 +105,7 @@ if (isset($_GET['blogID'])) {
 
                 if ($match == 0) { ?>
                     <br><br><br><br><br><br>
-                    <div style="height:max-content;margin-bottom:20px;padding:15px;border-top:3px solid black">
+                    <div style=" height:max-content;margin-bottom:20px;padding:15px;border-top:3px solid black">
                         <h1 align="center">No comments right now!!</h1>
                     </div>
 
@@ -115,6 +117,9 @@ if (isset($_GET['blogID'])) {
                     $comment = $row['comment'];
                     $userName = $row['userName'];
                     $time = $row['time'];
+
+                    $l=strlen($comment)-2;
+                    $comment=substr($comment,3,$l-3);
 
                     $q = "select fullName from bose_user_profile where id=$userID limit 1";
                     $re = mysqli_query($conn, $q);
@@ -146,6 +151,7 @@ if (isset($_GET['blogID'])) {
             </div>
         </div>
     </div>
+
 
 </body>
 
