@@ -117,9 +117,10 @@ if (isset($_GET['blogID'])) {
                     $comment = $row['comment'];
                     $userName = $row['userName'];
                     $time = $row['time'];
+                    $commentID = $row['commentID'];
 
-                    $l=strlen($comment)-2;
-                    $comment=substr($comment,3,$l-3);
+                    $l = strlen($comment) - 2;
+                    $comment = substr($comment, 3, $l - 3);
 
                     $q = "select fullName from bose_user_profile where id=$userID limit 1";
                     $re = mysqli_query($conn, $q);
@@ -136,8 +137,15 @@ if (isset($_GET['blogID'])) {
                         <br>
                         <div style="height:max-content;margin-bottom:20px;padding:15px;border-top:3px solid black;">
 
-                            <b> <a style="font-size:15px;"><?php echo "By: " . $userName . "<br>At: " . date("M d,Y h:i A", $time); ?></a><b><br><br />
-                                    <p style="font-size:20px"><?php echo "" . $comment; ?> </p>
+                            <a style="font-size:20px;"><?php echo "By: " . $userName . "<br>At: " . date("M d,Y h:i A", $time); ?></a>
+                            <br><br>
+                            <p style="font-size:25px"><?php echo "" . $comment; ?> </p><br>
+                            <?php
+                            if ($userID == $_SESSION['id']) {
+                                echo "<a href='http://quizfeed.selisestaging.com/deleteComment.php?commentID=$commentID&blogID=$blogID' style='font-size:15px'>Delete</a>";
+                            }
+
+                            ?>
                         </div>
 
                     <?php
