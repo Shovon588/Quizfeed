@@ -37,19 +37,7 @@ $_SESSION['blogID']=$blogID;
 
 
     <script src="ckeditor/ckeditor.js"></script>
-
-    <script>
-        CKEDITOR.replace('editor');
-
-        $(function() {
-            $('#editor').ckeditor({
-                toolbar: 'Full',
-                enterMode: CKEDITOR.ENTER_BR,
-                shiftEnterMode: CKEDITOR.ENTER_P
-            });
-        });
-    </script>
-
+    
 </body>
 
 </html>
