@@ -19,11 +19,11 @@ if($result)
     //successfull
     $message = "Blog has been deleted successfully from the database.";
 
-    echo "<script type='text/javascript'>alert('$message');
-    window.location.href='http://localhost/every-end/myBlog.php?id=$id';
-    
+    echo "<script type='text/javascript'>alert('$message');    
     </script>";
     echo 'window.location.href = "myBlog.php";';
+    header("Location: myBlog.php?blogID=$blogID");
+
 }
 else{
     //not successfull
@@ -31,9 +31,7 @@ else{
     die();
     $message = "Can not remove blog.\\nTry again.";
 
-    echo "<script type='text/javascript'>alert('$message');
-    window.location.href='myBlog.php';
-    
+    echo "<script type='text/javascript'>alert('$message');    
     </script>";
-    echo 'window.location.href = "myBlog.php";';
+    header("Location: myBlog.php?blogID=$blogID");
 }

@@ -1,8 +1,8 @@
 <?php
 session_start();
-//require("sessionCheck.php");
+require("sessionCheck.php");
 require("connectToDB.php");
-$id = 1;
+$id = $_SESSION['id'];
 
 ?>
 
