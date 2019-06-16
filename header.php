@@ -15,7 +15,7 @@
     .dropdown-item {
         padding: 6%;
         font-family: "Exo 2";
-        font-size:20px;
+        font-size: 20px;
     }
 
     .d-flex {
@@ -38,6 +38,7 @@
             <a class="dropdown-item" href="calendar.php">Calendar</a>
             <a class="dropdown-item" href="createQuiz.php">Add Quiz</a>
             <a class="dropdown-item" href="createProblem.php">Add Questions</a>
+            <a class="dropdown-item" href="writeBlog.php">Write New Blog</a>
             <a class="dropdown-item" href="aboutUs.php">About Us</a>
         </div>
         <nobr style="font-family:Lobster; font-size:140%">&nbsp; Quiz Feed</nobr>
@@ -54,4 +55,3 @@
         <span class="fa fa-sign-out" style="font-size:200%; padding-left:20px;"></span>
     </a>
 </div>
-
