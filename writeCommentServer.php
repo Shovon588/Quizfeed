@@ -12,6 +12,7 @@ if (isset($_POST['submit'])) {
         $comment = $_POST['editor'];
         $time = time() + 21600;
         $userID=$_SESSION['id'];
+        $userName='user'.$userID;
     } 
     else {
         $message = "You need to write some comment first.";
@@ -27,7 +28,7 @@ if (isset($_POST['submit'])) {
     if (isset($comment) && !empty($comment)) {
         //have to insert data into database
 
-        $query = "INSERT INTO `bose_comments` (`blogID`,`userID`,`comment`,`time`) VALUES('$blogID','$userID','$comment','$time')";
+        $query = "INSERT INTO `bose_comments` (`blogID`,`userID`,`comment`,`time`,`userName`) VALUES('$blogID','$userID','$comment','$time','$userName')";
         $result = mysqli_query($conn, $query);
 
         if (!$result) {
