@@ -37,3 +37,5 @@ else{
     </script>";
     echo 'window.location.href = "myBlog.php";';
 }
+
+?>
