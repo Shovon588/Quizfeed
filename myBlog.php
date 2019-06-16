@@ -112,7 +112,7 @@ $id = $_SESSION['id'];
                             <br>
                             <p style="font-size:17px"><?php echo "" . substr($blog, 0, 275) . "   ....." . "<a href='http://quizfeed.selisestaging.com/readFullBlog?blogID=$blogID'> Read full blog</a>"; ?></p>
 
-                            <?php echo "<a style='color:red;font-size:17px' href='http://quizfeed.selisestaging.com/deleteBlog?blogID=$blogID'>Delete blog</a>" ?>
+                            <?php echo "<a style='color:red;font-size:17px' href='http://quizfeed.selisestaging.com/deleteBlog.php?blogID=$blogID'>Delete blog</a>" ?>
                             <?php ?>
                         </div>
 
