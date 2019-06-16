@@ -19,11 +19,11 @@ if($result)
     //successfull
     $message = "Blog has been deleted successfully from the database.";
 
-    echo "<script type='text/javascript'>alert('$message');    
+    echo "<script type='text/javascript'>alert('$message');
+    window.location.href='http://quizfeed.selisestaging.com/myBlog.php?id=$id';
+    
     </script>";
     echo 'window.location.href = "myBlog.php";';
-    header("Location: myBlog.php?blogID=$blogID");
-
 }
 else{
     //not successfull
@@ -31,7 +31,9 @@ else{
     die();
     $message = "Can not remove blog.\\nTry again.";
 
-    echo "<script type='text/javascript'>alert('$message');    
+    echo "<script type='text/javascript'>alert('$message');
+    window.location.href='myBlog.php';
+    
     </script>";
-    header("Location: myBlog.php?blogID=$blogID");
+    echo 'window.location.href = "myBlog.php";';
 }
