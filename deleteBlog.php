@@ -1,4 +1,6 @@
 <?php
+
+die("ami ekahne esechi");
 session_start();
 require("sessionCheck.php");
 require("connectToDB.php");
