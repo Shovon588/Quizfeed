@@ -4,7 +4,7 @@
   include 'connectToDB.php';
   
   $tempid = $_GET['problemID'];
-  $sql = $conn->query("SELECT * FROM `BOSE_add_question` WHERE `problemId` = '$tempid'" );
+  $sql = $conn->query("SELECT * FROM `bose_add_question` WHERE `problemId` = '$tempid'" );
   $res = $sql->fetch_assoc();
   if($res['publicOrPrivate'] == '1' && $res['problemSetter']!=$personID ) die("Sorry! You can't view this problem!");
   
@@ -63,7 +63,7 @@
             <div class="col-sm-8">
             <?
                   $hProblemID = $_GET['problemID'];
-                  $ageiSolved = $conn->query("SELECT * FROM BOSE_submission WHERE userId='$personID' AND problemId='$hProblemID' ") ;
+                  $ageiSolved = $conn->query("SELECT * FROM bose_submission WHERE userId='$personID' AND problemId='$hProblemID' ") ;
                   if( $ageiSolved->num_rows > 0 ) echo "<div class=\"alert alert-warning\">You have submitted this problem</div>";
                   
                 ?>
