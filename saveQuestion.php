@@ -13,7 +13,7 @@
     $description = $_POST['descrip'];
     //$questID = $_POST['questID'];
 
-$sql = "  INSERT INTO `BOSE_add_question`
+$sql = "  INSERT INTO `bose_add_question`
 (
 `problemTitle`,
 `problemStatement`,
@@ -32,6 +32,6 @@ VALUES
 if( $conn->query($sql) === TRUE ){
     echo $conn->insert_id;
 }
-else echo "-1 ".$conn->error;
+else echo "-1";
 
 ?>
