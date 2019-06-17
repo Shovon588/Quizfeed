@@ -26,7 +26,7 @@
         <tbody>
             <?php
                 include 'connectToDB.php';
-                $sql = "SELECT * FROM  BOSE_add_question WHERE publicOrPrivate='0' ";
+                $sql = "SELECT * FROM  bose_add_question WHERE publicOrPrivate='0' ";
                 $result = $conn->query($sql);
 
                 if ($result->num_rows > 0) {
