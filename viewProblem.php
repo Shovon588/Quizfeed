@@ -61,7 +61,7 @@
             
             </div>
             <div class="col-sm-8">
-            <?
+            <?php
                   $hProblemID = $_GET['problemID'];
                   $ageiSolved = $conn->query("SELECT * FROM bose_submission WHERE userId='$personID' AND problemId='$hProblemID' ") ;
                   if( $ageiSolved->num_rows > 0 ) echo "<div class=\"alert alert-warning\">You have submitted this problem</div>";
