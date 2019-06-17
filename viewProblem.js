@@ -7,7 +7,9 @@ $(document).ready(function() {
         "loadOptions.php", {
             Qid: problemID
         },
-        function(data, status) {
+       
+    ).done(
+         function(data, status) {
             recievedOptions = JSON.parse(data);
             //console.log(data);
             //alert(recievedOptions.length);
