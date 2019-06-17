@@ -53,6 +53,8 @@ $(document).ready(function() {
             "loadProblemDescription.php", {
                 problemid: problemID
             },
+            
+        ).done(
             function(data1, status1) {
                 console.log(data1);
                 console.log(JSON.parse(data1));
