@@ -100,7 +100,7 @@ $id = $_SESSION['id'];
 
       <tbody>
         <?php
-        $sql = "SELECT * FROM  BOSE_add_question WHERE problemSetter=$id ";
+        $sql = "SELECT * FROM  bose_add_question WHERE problemSetter=$id ";
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
