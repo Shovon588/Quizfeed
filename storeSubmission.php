@@ -10,12 +10,12 @@ if(isset($_POST['quizID']))
 $problemId = $_POST['problemId'];
 $isOK = $_POST['isOK'];
 
-$prevSolved = "SELECT * FROM `BOSE_submission` WHERE `problemId` = '$problemId' AND `userId`='$personID' ";
+$prevSolved = "SELECT * FROM `bose_submission` WHERE `problemId` = '$problemId' AND `userId`='$personID' ";
 $res = $conn->query($prevSolved);
 if($res->num_rows > 0) die( "You are not eligible to solve this problem");
 
 
-$sql = "INSERT INTO `BOSE_submission` (`problemId`,`userId`,`rightOrWrong`) VALUES ('$problemId','$personID','$isOK')";
+$sql = "INSERT INTO `bose_submission` (`problemId`,`userId`,`rightOrWrong`) VALUES ('$problemId','$personID','$isOK')";
 if( $conn->query($sql) === TRUE) {
     echo "submission stored!";
 
@@ -23,7 +23,7 @@ if( $conn->query($sql) === TRUE) {
     if($isOK == "0") $inc = 0; 
     $inc = 1;
     $updateProbInfo = "
-        UPDATE `BOSE_add_question`
+        UPDATE `bose_add_question`
         SET
         solveCount = solveCount + '$inc' ,
         submissionCount = submissionCount + 1
@@ -32,22 +32,22 @@ if( $conn->query($sql) === TRUE) {
     if($conn->query($updateProbInfo)==TRUE);
     else die( $conn->error );
 
-    $scores = $conn->query("SELECT `weight`,`penalty` FROM `BOSE_quiz_problem` WHERE `problemID` = '$problemId' AND `quizID`='$quizId'");
+    $scores = $conn->query("SELECT `weight`,`penalty` FROM `bose_quiz_problem` WHERE `problemID` = '$problemId' AND `quizID`='$quizId'");
     $dtscores = $scores->fetch_assoc();
 
     $inc = $dtscores['weight'];
     if($isOK=="0") $inc = 0 - $dtscores['penalty'];
 
-    $performancerow = $conn->query("SELECT * FROM `BOSE_quiz_performance` WHERE `quizID`='$quizId' AND `userID`='$personID' ");
+    $performancerow = $conn->query("SELECT * FROM `bose_quiz_performance` WHERE `quizID`='$quizId' AND `userID`='$personID' ");
 
     if( $performancerow->num_rows > 0 );
     else{
-        $conn->query("INSERT INTO `BOSE_quiz_performance` (`quizID`,`userID`) VALUES ('$quizId','$personID') ");
+        $conn->query("INSERT INTO `bose_quiz_performance` (`quizID`,`userID`) VALUES ('$quizId','$personID') ");
     }
 
 
     $updatePerformance = "
-        UPDATE `BOSE_quiz_performance`
+        UPDATE `bose_quiz_performance`
         SET 
         score = score+'$inc'
         WHERE `quizID`='$quizId' AND `userID`='$personID'
