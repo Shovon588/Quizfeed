@@ -43,7 +43,7 @@
       rel="stylesheet"
     />
     <link
-      href="/every-end/createProblem.css"
+      href="createProblem.css"
       rel="stylesheet"
       type="text/css"
     />
