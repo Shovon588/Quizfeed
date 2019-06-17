@@ -1,9 +1,6 @@
 <?php
   session_start();
   include 'sessionchk.php';
-?>
-
-<?php 
 
     include 'connectToDB.php';
     $Qid = $_POST['Qid'];
