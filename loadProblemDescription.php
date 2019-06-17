@@ -8,7 +8,7 @@
 
     include 'connectToDB.php';
     $problemID = $_POST['problemid'];
-    $sql = "SELECT * FROM `BOSE_add_question` WHERE `problemId`=$problemID ";
+    $sql = "SELECT * FROM `bose_add_question` WHERE `problemId`=$problemID ";
     $result = $conn->query($sql);
     //if( $result->num_rows<=0 ) echo $problemID."lololo";
     $row = $result->fetch_assoc();
