@@ -85,15 +85,13 @@ $(document).ready(function() {
                 function(storeResponse, status) {
                     //alert(storeResponse);
                     console.log("storeResponse: " + storeResponse);
-                    if (storeResponse == "submission stored!") {
-                        if (oka == 0) {
+                     if (oka == 0) {
                             alert("Wrong ans!");
 
                         } else {
                             alert("hurraaay ! correct answer!");
                         }
-
-                    } else alert(storeResponse);
+                    alert(storeResponse);
                 }
             );
 
