@@ -4,25 +4,28 @@
     <title>Question Archive</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
+    
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css">
-  
+   
 </head>
+
 
 <body style="margin: 5% 5% 5% 5%; width:auto;">
 
     
-      <table id="parchiveTable" class="table table-striped table-bordered" style="width:100%">            
-         <thead>
-                <tr>
-                    <th>Serial</th>
-                    <th>Title:  </th>
-                    <th>Solve/Submission</th>
-                    
-                </tr>
+
+    <h4>Question Archive</h4>
+    <table id="parchiveTable" class="table table-striped table-bordered" style="width:100%">
+        <thead>
+            <tr>
+                <th>Serial</th>
+                <th>Title: </th>
+                <th>Solve/Submission</th>
+
+            </tr>
         </thead>
-        
+
         <tbody>
             <?php
                 include 'connectToDB.php';
@@ -57,8 +60,9 @@
                 }
              ?>
         </tbody>
-        </table>
-   
+    </table>
+    <center><a href="homepage.php">Back to hompage</a></center>
+
 
 </body>
 
@@ -71,7 +75,7 @@
 
 <script>
     $(document).ready(function() {
-       $("#parchiveTable").DataTable();
+        $("#parchiveTable").DataTable();
     });
 </script>
 
