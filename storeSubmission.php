@@ -56,6 +56,6 @@ if( $conn->query($sql) === TRUE) {
     else die("performance added!");
     
 }
-else echo "submission not stored";
+else echo "submission not stored: ".$conn->error;
 
 ?>
