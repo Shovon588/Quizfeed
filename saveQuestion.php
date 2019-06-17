@@ -8,6 +8,7 @@
 
     include 'connectToDB.php';
     $setter = $personID;
+  echo "setter ".$personID."<br>";
     $pubOrPri = $_POST['pubOrPri'];
     $title = $_POST['questTit'];
     $description = $_POST['descrip'];
