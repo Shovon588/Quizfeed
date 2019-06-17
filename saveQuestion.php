@@ -32,6 +32,6 @@ VALUES
 if( $conn->query($sql) === TRUE ){
     echo $conn->insert_id;
 }
-else echo "-1";
+else echo "-1 ".$conn->error;
 
 ?>
