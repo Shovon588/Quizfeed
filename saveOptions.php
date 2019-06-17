@@ -21,7 +21,7 @@ $iscorr = $_POST['WorR'];
 $sql = "
 
 
-INSERT INTO `BOSE_add_option`
+INSERT INTO `bose_add_option`
 (`problemId`,
 `optionId`,
 `optionDescription`,
