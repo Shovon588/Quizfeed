@@ -5,99 +5,75 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.1.0/material.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/dataTables.material.min.css">
-    <!--
-    <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js"></script>
-    
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
-	-->
-
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css">
+  
 </head>
 
 <body style="margin: 5% 5% 5% 5%; width:auto;">
-<?php include 'header.php';?>
-<br><br><br><br>
-  
-    <center>
-        <table id="parchiveTable" class="mdl-data-table" style="width:60%; ">
-            <thead>
+
+    
+      <table id="parchiveTable" class="table table-striped table-bordered" style="width:100%">            
+         <thead>
                 <tr>
-                    <th>Title: <input type="search" id = "searchinp" placeholder="search"> </th>
+                    <th>Serial</th>
+                    <th>Title:  </th>
                     <th>Solve/Submission</th>
-                    <th>Solve rate</th>
+                    
                 </tr>
-            </thead>
-            <tbody>
+        </thead>
+        
+        <tbody>
+            <?php
+                include 'connectToDB.php';
+                $sql = "SELECT * FROM  BOSE_add_question WHERE publicOrPrivate='0' ";
+                $result = $conn->query($sql);
 
-                <?php
-                                include 'connectToDB.php';
-                                $sql = "SELECT * FROM bose_add_question WHERE `publicOrPrivate` = 0";
-                                $result = $conn->query($sql);
-                                if( $result->num_rows  > 0){
-                                    while( $row = $result->fetch_assoc() ){
-                                        echo "<tr>";
-                                            echo "<td>";
-                                                echo "<a href = \"/every-end/viewProblem.php?problemID=";
-                                                echo $row['problemId'];
-                                                echo "\" >";
-                                                echo $row['problemTitle'];
-                                                echo "</a>";
-                                            echo "</td>";
-                                            echo "<td> feature on process </td>";
-                                            echo "<td> feature on process </td>";
-                                        echo "</tr>";
-                                    }
-                                }
-                            ?>
+                if ($result->num_rows > 0) {
+                
+                $serial = 0;
+                while ($row = $result->fetch_assoc()) {
+                    $title = $row['problemTitle'];
+                    $privarcy = $row['publicOrPrivate'];
+                    $Qid = $row['problemId'];
+                    if ($privarcy == 1) $privacy = "Private";
+                    else $privacy = "Public";
+                    $sub = $row['submissionCount'];
+                    $solve = $row['solveCount'];
+                    $percent = ($solve / $sub) * 100;
+                    $percent=100-$percent;
+                    //die($percent);
 
-
-            </tbody>
+                    echo "<tr>";
+                        echo "<td>".$serial."</td>";
+                        echo "<td><a href=\"viewProblem.php?problemID=".$Qid."\">".$title."</a></td>";
+                        echo "<td>".$percent."%</td>";
+                    echo "</tr>";
+                    $serial++;
+                }
+                }
+                else{
+                echo "No Question added";
+                }
+             ?>
+        </tbody>
         </table>
-    </center>
+   
 
 </body>
 
-<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/1.10.19/js/dataTables.material.min.js"></script>
+
+
+<script src="http://code.jquery.com/jquery-3.3.1.js"></script>
+<script src="http://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script src="http://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js"></script>
+
 
 <script>
     $(document).ready(function() {
-        $("#parchiveTable").DataTable(
-
-            {
-                columnDefs: [{
-                    targets: [0, 1, 2],
-                    className: 'mdl-data-table__cell--non-numeric'
-                }]
-                
-            }
-
-        );
-
-        $(".dataTables_filter").hide();
-        $('#searchinp').keyup(function(){
-            table.search($(this).val()).draw() ;
-        });
-
+       $("#parchiveTable").DataTable();
     });
 </script>
-<style>
-.form-inline label {
-    display: -ms-flexbox;
-    display: block;
-}
-.pagination {
- 
-    padding-left: 30px;
-}
-.form-inline label {
-    margin-bottom: 300%;
-}
-.mdl-data-table {
-    margin-right: 260px;
-}
-</style>
+
+
 </html>
