@@ -95,6 +95,7 @@ $(document).ready(function() {
                 console.log("Problem Created with id: " + problemID);
                 if (problemID != "-1") {
                     insertOptions();
+                    console.log(dataSaveQues);
                     console.log("Problem Added Successfully");
                     $("#errMsg").hide();
                     $("#sucMsg").show();
