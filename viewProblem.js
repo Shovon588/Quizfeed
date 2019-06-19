@@ -1,15 +1,21 @@
 $(document).ready(function() {
 
+    var descriptionQuill = new Quill('#problemDescription', {
+        theme: 'snow',
+        readOnly: true,
+        theme: 'bubble'
+    });
+
     var recievedOptions;
-    var problemID = document.getElementById("problemID").innerText;
+    var problemID = document.getElementById("problemID").value;
     console.log("problemID : " + problemID);
     $.post(
         "loadOptions.php", {
             Qid: problemID
         },
-       
+
     ).done(
-         function(data, status) {
+        function(data, status) {
             recievedOptions = JSON.parse(data);
             //console.log(data);
             //alert(recievedOptions.length);
@@ -53,15 +59,16 @@ $(document).ready(function() {
             "loadProblemDescription.php", {
                 problemid: problemID
             },
-            
+
         ).done(
             function(data1, status1) {
                 console.log(data1);
                 console.log(JSON.parse(data1));
                 var gp = JSON.parse(data1);
                 console.log("Problem Description: " + gp.problemStatement);
-                $("#problemDescription").html(gp.problemStatement);
-                $("#problemTitle").html("<b>Title: " + gp.problemTitle + "</b>");
+                descriptionQuill.root.innerHTML = gp.problemStatement;
+                //$("#problemDescription").html(gp.problemStatement);
+                $("#problemTitle").html("<b><i>Title: " + gp.problemTitle + "<i></b>");
             }
         );
     }
@@ -89,12 +96,12 @@ $(document).ready(function() {
                 function(storeResponse, status) {
                     //alert(storeResponse);
                     console.log("storeResponse: " + storeResponse);
-                     if (oka == 0) {
-                            alert("Wrong ans!");
+                    if (oka == 0) {
+                        alert("Wrong ans!");
 
-                        } else {
-                            alert("hurraaay ! correct answer!");
-                        }
+                    } else {
+                        alert("hurraaay ! correct answer!");
+                    }
                     alert(storeResponse);
                 }
             );
