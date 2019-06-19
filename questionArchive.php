@@ -7,21 +7,26 @@
     
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="questionArchive.css">
    
 </head>
 
 
 <body style="margin: 5% 5% 5% 5%; width:auto;">
 
-    
+    <div class="row">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8">
 
-    <h4>Question Archive</h4>
+    <h4><b>#QUESTION ARCHIVE</b></h4>
+    <hr>
     <table id="parchiveTable" class="table table-striped table-bordered" style="width:100%">
         <thead>
             <tr>
-                <th>Serial</th>
-                <th>Title: </th>
-                <th>Solve/Submission</th>
+                <th style="width:5%">Serial</th>
+                <th style="width:75%">Title: </th>
+                <th style="width:10%">Solve/Submission</th>
+                <th style="width:10%">Solve/Submission bar</th>
 
             </tr>
         </thead>
@@ -44,13 +49,19 @@
                     $sub = $row['submissionCount'];
                     $solve = $row['solveCount'];
                     $percent = ($solve / $sub) * 100;
-                    $percent=100-$percent;
+                    //$percent=100-$percent;
                     //die($percent);
 
                     echo "<tr>";
                         echo "<td>".$serial."</td>";
                         echo "<td><a href=\"viewProblem.php?problemID=".$Qid."\">".$title."</a></td>";
-                        echo "<td>".$percent."%</td>";
+                        echo "<td>".$solve."/".$sub."</td>";
+                        echo "<td>";
+
+                            echo "<div class=\"progress\">
+                            <div class=\"progress-bar\" role=\"progressbar\" style=\"width:".$percent."%\"></div></div>";
+                        
+                        echo "</td>";
                     echo "</tr>";
                     $serial++;
                 }
@@ -61,7 +72,12 @@
              ?>
         </tbody>
     </table>
-    <center><a href="homepage.php">Back to hompage</a></center>
+    <hr>
+    <center><a href="homepage.php"><b>Back to hompage</b></a></center>
+    </div>
+    <div class="col-sm-2"></div>
+    </div>
+    
 
 
 </body>
