@@ -64,29 +64,45 @@
             <?php
                   $hProblemID = $_GET['problemID'];
                   $ageiSolved = $conn->query("SELECT * FROM bose_submission WHERE userId='$personID' AND problemId='$hProblemID' ") ;
-                  if( $ageiSolved->num_rows > 0 ) echo "<div class=\"alert alert-warning\">You have submitted this problem</div>";
+                  if( $ageiSolved->num_rows > 0 ) echo "<center><div class=\"alert alert-warning\">You have submitted this problem</div></center>";
                   
                 ?>
-              <label>Question ID: #
-                <a href="#" id = "problemID">
-                  <?php echo $_GET['problemID']; ?> </a>
-                </label>
-                <h4 id="problemTitle"></h4>
-                <div id="problemDescription">asas</div>
+              
+                 <?php 
+                    $tmpid =  $_GET['problemID']; 
+                    echo "<input id = \"problemID\" type=\"text\" value=\"".$tmpid."\"hidden>";
+                  ?> 
+              
+                <center>
+                  <h4 id="problemTitle" style="padding:2%"></h4>
+                  <hr>
+                
+
+                <div id="problemDescription"></div>
+                <hr>
                 <div class="card-columns" id="divOptions">
 
                 </div>
-                
+                <hr>
                 <button id = "judgeMe" class="btn btn-primary">Judge</button>
+                </center>
             </div>
             <div class="col-sm-2"></div>
         </div>
     </div>
+    <hr>
   <center><a href="questionArchive.php" > Back to QuestionArchive </a></center>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+<script>
 
+  
+
+</script>
 <script src="viewProblem.js"></script>
+
+
 </html>
