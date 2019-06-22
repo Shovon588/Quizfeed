@@ -85,7 +85,7 @@ $id = $_SESSION['id'];
             <div class="col-sm-8">
                 <?php
 
-                $query = "select * from bose_blog where bloggerID=$id";
+                $query = "select * from bose_blog where bloggerID=$id order by time desc";
                 $result = mysqli_query($conn, $query);
 
                 if ($result->num_rows == 0) {
@@ -110,7 +110,8 @@ $id = $_SESSION['id'];
                             <h3><?php echo "" . $title; ?></h3>
                             <h5><?php echo "Published on: " . date("M d,Y h:i A", $time); ?> </h5>
                             <br>
-                            <p style="font-size:17px"><?php echo "" . substr($blog, 0, 275) . "   ....." . "<a href='http://quizfeed.selisestaging.com/readFullBlog?blogID=$blogID'> Read full blog</a>"; ?></p>
+
+                            <p style="font-size:17px"><?php echo "". "<a href='http://quizfeed.selisestaging.com/readFullBlog.php?blogID=$blogID'> Read full blog</a>"; ?></p>
 
                             <?php echo "<a style='color:red;font-size:17px' href='http://quizfeed.selisestaging.com/deleteBlog.php?blogID=$blogID'>Delete blog</a>" ?>
                             <?php ?>
