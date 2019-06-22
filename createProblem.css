@@ -1,0 +1,32 @@
+#optionsContainer {
+    background-color: antiquewhite;
+}
+
+.but {
+    border-color: black;
+    border-width: thin;
+    background-color: white;
+    width: 20%;
+    margin: 1%;
+    border-style: solid;
+}
+
+.bsave {
+    color: white;
+    border-color: #07820c;
+    background-color: #07820c;
+}
+
+.bdel {
+    color: white;
+    border-color: #F44336;
+    background-color: #F44336;
+}
+
+#editor {
+    height: 250px;
+}
+
+#divOptions {
+    width: 100%;
+}
