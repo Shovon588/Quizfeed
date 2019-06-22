@@ -10,7 +10,7 @@ if (isset($_POST['submit'])) {
         $blog = $_POST['editor'];
         $title=$_POST['title'];
         $time = time() + 21600;
-        $bloggerID =1;
+        $bloggerID =$_SESSION['id'];
         $userName = 'user' . $bloggerID;
 
         echo "".$blog.' '.$title.' ' .$time;
