@@ -142,7 +142,7 @@ require("connectToDB.php");
                         <h5><?php echo "Published on: " . date("M d,Y h:i A", $time); ?></h5><br>
 
 
-                        <div style=" font-size:17px"><?php echo "" . "<a href='http://quizfeed.selisestaging.com/readFullBlog.php?blogID=$blogID'>Read full blog</a>"; ?></div>
+                        <?php echo "" . "<a href='http://quizfeed.selisestaging.com/readFullBlog.php?blogID=$blogID'>Read full blog</a>"; ?>
 
                     </div>
                 <?php } ?>
