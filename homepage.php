@@ -128,7 +128,7 @@ require("connectToDB.php");
 
             <div class="col-sm-8">
                 <?php
-                $query = "select * from bose_blog";
+                $query = "select * from bose_blog order by time desc";
                 $result = mysqli_query($conn, $query);
                 while ($row = $result->fetch_assoc()) {
                     $title = $row['blogTitle'];
