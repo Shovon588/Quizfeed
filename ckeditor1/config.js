@@ -7,6 +7,7 @@ CKEDITOR.editorConfig = function( config ) {
 	// Define changes to default configuration here. For example:
 	// config.language = 'fr';
 	 config.uiColor = '#AADC6E';
-	config.width = '85%';
-	config.height = 380;
+
+	 config.extraPlugins = 'youtube';
+
 };
