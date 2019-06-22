@@ -141,9 +141,9 @@ require("connectToDB.php");
                         <h3><?php echo "" . $title; ?></h3>
                         <h5><?php echo "Published on: " . date("M d,Y h:i A", $time); ?></h5><br>
 
-                        
-                        <div style=" font-size:17px"><?php echo ""."<a href='http://localhost/quizfeedlocal/readFullBlog.php?blogID=$blogID'>Read full blog</a>"; ?></div>
-                        
+
+                        <div style=" font-size:17px"><?php echo "" . "<a href='http://quizfeed.selisestaging.com/readFullBlog.php?blogID=$blogID'>Read full blog</a>"; ?></div>
+
                     </div>
                 <?php } ?>
             </div>
