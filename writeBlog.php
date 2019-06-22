@@ -46,8 +46,7 @@
 
     </div>
 
-
-
+    
     <script src="ckeditor1/ckeditor.js"></script>
 
 </body>
