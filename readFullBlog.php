@@ -45,11 +45,12 @@ if (isset($_GET['blogID'])) {
                     $title = $row['blogTitle'];
                     $blog = $row['blogContent'];
                     $time = $row['time'];
+
                     ?>
                     <center><a style="font-size:40px;"><?php echo "" . $title ?> </a></center>
                     <h5 align="center" style="color:yellowgreen"><?php echo "Published on: ";
                                                                     echo date("M d,Y h:i A", $time) ?></h5>
-                    <p align="center" style="margin-top:3%;font-size:20px;text-align:justify"><?php echo "" . $blog ?></p>
+                    <div style="font-size:20px;border-top:3px solid black;margin-top:3%"><br><?php echo "" . $blog ?></div>
                 <?php } ?>
 
             </div>
@@ -119,9 +120,6 @@ if (isset($_GET['blogID'])) {
                     $time = $row['time'];
                     $commentID = $row['commentID'];
 
-                    $l = strlen($comment) - 2;
-                    $comment = substr($comment, 3, $l - 3);
-
                     $q = "select fullName from bose_user_profile where id=$userID limit 1";
                     $re = mysqli_query($conn, $q);
 
@@ -139,7 +137,8 @@ if (isset($_GET['blogID'])) {
 
                             <a style="font-size:20px;"><?php echo "By: " . $userName . "<br>At: " . date("M d,Y h:i A", $time); ?></a>
                             <br><br>
-                            <p style="font-size:25px"><?php echo "" . $comment; ?> </p><br>
+                            <div style="font-size:25px"><?php echo "" . $comment; ?></div><br>
+
                             <?php
                             if ($userID == $_SESSION['id']) {
                                 echo "<a href='http://quizfeed.selisestaging.com/deleteComment.php?commentID=$commentID&blogID=$blogID' style='font-size:15px'>Delete</a>";
