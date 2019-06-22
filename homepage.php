@@ -140,7 +140,7 @@ require("connectToDB.php");
                     <div class="card" style="border:3px solid;">
                         <h3><?php echo "" . $title; ?></h3>
                         <h5><?php echo "Published on: " . date("M d,Y h:i A", $time); ?></h5><br>
-                        <a href="http://quizfeed.selisestaging.com/readFullBlog.php?blogID=$blogID">Read blog</a>
+                        <?php echo ""."<a href='http://quizfeed.selisestaging.com/readFullBlog.php?blogID=$blogID'>Read blog</a>"; ?>
                     </div>
                 <?php } ?>
             </div>
