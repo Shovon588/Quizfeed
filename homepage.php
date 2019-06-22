@@ -123,7 +123,6 @@ require("connectToDB.php");
     <div class="container-fluid">
         <div class="row">
 
-
             <div class="col-sm-2">
             </div>
 
@@ -141,7 +140,7 @@ require("connectToDB.php");
                     <div class="card" style="border:3px solid;">
                         <h3><?php echo "" . $title; ?></h3>
                         <h5><?php echo "Published on: " . date("M d,Y h:i A", $time); ?></h5><br>
-                        <p style=" font-size:17px"><?php echo "" . substr($blog, 0, 260) . "....." . "<a href='http://quizfeed.selisestaging.com/readFullBlog.php?blogID=$blogID'>Read full blog</a>"; ?></p>
+                        <a href="http://quizfeed.selisestaging.com/readFullBlog.php?blogID=$blogID">Read blog</a>
                     </div>
                 <?php } ?>
             </div>
