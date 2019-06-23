@@ -17,5 +17,5 @@ if($result)
 {
 //successful
 
-header("Location: myQues.php.php");
+header("Location: myQues.php");
 }
