@@ -32,7 +32,6 @@ if (isset($_POST['submit'])) {
         $result = mysqli_query($conn, $query);
 
         if (!$result) {
-            die("" . mysqli_error($conn));
             $message = "Something went wrong.\\nTry again";
 
             echo "<script type='text/javascript'>alert('$message');

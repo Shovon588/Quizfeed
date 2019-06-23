@@ -20,3 +20,5 @@ if($result)
 
 header("Location: readFullBlog.php?blogID=$blogID");
 }
+
+?>
