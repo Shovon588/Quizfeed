@@ -34,7 +34,7 @@
         <div class="dropdown-menu" aria-labelledby="dropdownMenuOffset" style="width:max-content;font-size:30px">
             <a class="dropdown-item" href="homepage.php">Home</a>
             <!--<a class="dropdown-item" href="quizInfo.php">Quiz</a>-->
-            <a class="dropdown-item" href="questionArchive.php">Questions</a>
+            <a class="dropdown-item" href="questionArchive.php">Question Archive</a>
             <a class="dropdown-item" href="calendar.php">Calendar</a>
             <a class="dropdown-item" href="createQuiz.php">Add Quiz</a>
             <a class="dropdown-item" href="createProblem.php">Add Questions</a>
